@@ -1,9 +1,5 @@
-import fs from "fs";
-
 export default function handler(req, res) {
-  const ships = JSON.parse(
-    fs.readFileSync(new URL("../data/ships.json", import.meta.url), "utf8")
-  );
-
-  res.status(200).json(ships);
+  res.status(200).json({
+    message: "API works"
+  });
 }
