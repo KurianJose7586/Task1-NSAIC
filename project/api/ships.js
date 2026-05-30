@@ -1,9 +1,9 @@
-import fs from "fs";
+const fs = require("fs");
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
   const ships = JSON.parse(
-    fs.readFileSync(new URL("./data.json", import.meta.url), "utf8")
+    fs.readFileSync(__dirname + "/data.json", "utf8")
   );
 
   res.status(200).json(ships);
-}
+};
